@@ -105,29 +105,33 @@ export default function AboutPage({ onNavigate, onRequestDemo }: AboutPageProps)
 
       {/* WHERE WE ARE HEADING (From Brief) */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-navy p-8 sm:p-14 text-white">
-          <div className="max-w-3xl">
+        <div className="relative overflow-hidden rounded-3xl bg-navy p-8 sm:p-14 text-white text-center shadow-2xl">
+          {/* Subtle ambient glows */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand/20 blur-3xl rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-royal/20 blur-3xl rounded-full pointer-events-none" />
+
+          <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
             <span className="rounded-2xl bg-emerald-500/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/30">
               Where We Are Heading
             </span>
-            <h2 className="font-display mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight">
+            <h2 className="font-display mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
               To become the trusted automation partner for accounting, audit, and property finance teams across the GCC and beyond.
             </h2>
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
               We are expanding across the UAE, Saudi Arabia, and the wider GCC region. To support this growth, we are continuously expanding our engineering, design, and quality capabilities.
             </p>
 
-            <div className="mt-8 border-t border-white/10 pt-6">
+            <div className="mt-10 border-t border-white/10 pt-8 w-full max-w-2xl mx-auto flex flex-col items-center text-center">
               <h3 className="font-display text-xl font-bold text-white mb-2">
                 Join Us &amp; Shape How Endloops Looks, Feels and Works
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed max-w-2xl">
+              <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto">
                 We believe exceptional design and bulletproof engineering go hand in hand. If you are passionate about building products that finance professionals rely on for critical decisions, we invite you to talk to us.
               </p>
-              <div className="mt-6">
+              <div className="mt-6 flex justify-center">
                 <button
                   onClick={() => onNavigate('contact')}
-                  className="rounded-2xl bg-brand px-7 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-brand-light transition-all duration-300"
+                  className="rounded-2xl bg-brand px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand/30 hover:bg-brand-light hover:shadow-brand/50 transition-all duration-300 cursor-pointer"
                 >
                   Contact Our Leadership Team
                 </button>

@@ -55,10 +55,6 @@ export default function ToolVisualizer() {
       <div className="relative z-10 flex flex-col gap-4 border-b border-slate-200 pb-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <div className="inline-flex items-center gap-2 rounded-2xl bg-brand/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand shadow-xs">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full rounded-2xl bg-leaf opacity-75 animate-ping" />
-              <span className="relative inline-flex size-2 rounded-2xl bg-brand" />
-            </span>
             <span>Interactive Engine Simulator</span>
           </div>
           <h3 className="font-display mt-2 text-2xl font-extrabold text-navy sm:text-3xl">
@@ -143,7 +139,7 @@ export default function ToolVisualizer() {
             {/* High-Tech HUD Scan Header */}
             <div className="mb-3 flex items-center justify-between border-b border-dashed border-slate-200 pb-2 text-[10px] text-slate-400">
               <span className="flex items-center gap-1.5 font-sans font-semibold text-brand">
-                <span className="size-1.5 rounded-2xl bg-leaf animate-pulse" />
+  
                 OCR Laser Stream: 300 DPI
               </span>
               <span className="font-mono">Confidence: {currentCase.confidenceScore}%</span>

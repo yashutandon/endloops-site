@@ -15,8 +15,14 @@ function ReviewCard() {
         <p className="font-display font-bold">Vouching batch, 248 documents</p>
         <span className="rounded-2xl bg-violet/10 px-3 py-1 text-xs font-semibold text-violet">Ready for review</span>
       </div>
-      <div className="mt-4 h-2 rounded-2xl bg-slate-100 overflow-hidden">
-        <div className="h-2 w-full rounded-2xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 shadow-xs shadow-emerald-500/25" />
+      <div className="mt-4 relative h-2.5 w-full rounded-full bg-slate-100/90 p-[2px] border border-slate-200/70 shadow-inner overflow-hidden">
+        <div
+          className="relative h-full rounded-full bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 shadow-[0_0_10px_rgba(16,185,129,0.4)] overflow-hidden"
+          style={{ width: '99.2%' }}
+        >
+          <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-progress-shimmer pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-1 rounded-full bg-white/95 shadow-[0_0_6px_#fff]" />
+        </div>
       </div>
       <ul className="mt-5 space-y-2.5">
         {rows.map(([id, msg, flag]) => (

@@ -29,9 +29,9 @@ export default function RoiCalculator({ onRequestDemo }: RoiCalculatorProps) {
           <IconCalculator className="size-3.5" />
           <span>Interactive Savings Estimator</span>
         </div>
-        <h3 className="font-display mt-2.5 text-2xl font-extrabold text-navy sm:text-3xl tracking-tight">
+         <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
           Estimate your team's monthly hours &amp; cost savings
-        </h3>
+        </h2>
         <p className="mt-1.5 text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
           See the tangible return of automating document extraction, 3-way matching, and working paper drafting in your practice.
         </p>

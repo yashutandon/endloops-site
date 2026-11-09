@@ -228,6 +228,19 @@ input[type="range"]::-webkit-slider-thumb:active {
   animation: radarPing 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+@keyframes progressShimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.animate-progress-shimmer {
+  animation: progressShimmer 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 @keyframes stampIn {
   0% {
     opacity: 0;

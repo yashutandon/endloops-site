@@ -88,9 +88,9 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
   }
 
   return (
-    <div className="space-y-24 sm:space-y-32">
+    <div className="space-y-20 sm:space-y-24">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-mist via-white to-white pt-12 pb-20 sm:pt-20 sm:pb-28">
+      <section className="relative overflow-hidden bg-gradient-to-b from-mist via-white to-white pt-10 pb-12 sm:pt-16 sm:pb-14">
         {/* Ambient background glows */}
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-r from-leaf/20 via-teal/15 to-royal/15 blur-3xl pointer-events-none rounded-2xl animate-ambient-mesh" />
 
@@ -104,7 +104,7 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                 <span className="shimmer-text">You make the call.</span>
               </h1>
 
-             
+
 
               {/* Core Philosophy Accent Callout */}
               <div className="mt-5 inline-flex items-center gap-2.5 rounded-2xl bg-white/85 border border-slate-200/80 px-3.5 py-2 w-fit max-w-full shadow-2xs backdrop-blur-xs">
@@ -212,14 +212,31 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                       </div>
                     </div>
 
-                    {/* Progress bar */}
+                    {/* Elegant Gauge Progress Bar */}
                     <div className="mt-5">
-                      <div className="flex justify-between text-xs font-semibold text-slate-600 mb-1.5">
-                        <span>248 Vouchers Processed</span>
-                        <span className="text-brand font-mono font-bold">99.2% Clean Match</span>
+                      <div className="flex items-center justify-between text-xs mb-2">
+                        <div className="flex items-center gap-1.5 font-semibold text-slate-700">
+                          <span className="size-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.7)]" />
+                          <span>248 Vouchers Processed</span>
+                        </div>
+                        <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-50/90 border border-emerald-200/70 px-2 py-0.5 rounded-md shadow-2xs">
+                          99.2% Clean Match
+                        </span>
                       </div>
-                      <div className="h-2.5 w-full rounded-2xl bg-slate-100 overflow-hidden">
-                        <div className="h-full w-full rounded-2xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 shadow-xs shadow-emerald-500/25" />
+
+                      {/* Recessed Inset Track with High-Precision Gauge Bezel */}
+                      <div className="relative h-2.5 w-full rounded-full bg-slate-100/90 p-[2px] border border-slate-200/70 shadow-inner overflow-hidden">
+                        {/* Luminous Emerald Fill */}
+                        <div
+                          className="relative h-full rounded-full bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 shadow-[0_0_10px_rgba(16,185,129,0.4)] overflow-hidden transition-all duration-500"
+                          style={{ width: '99.2%' }}
+                        >
+                          {/* Ambient Glass Shimmer Beam */}
+                          <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-progress-shimmer pointer-events-none" />
+
+                          {/* Leading-Edge Luminous Pip */}
+                          <div className="absolute right-0 top-0 bottom-0 w-1 rounded-full bg-white/95 shadow-[0_0_6px_#fff]" />
+                        </div>
                       </div>
                     </div>
 
@@ -288,7 +305,7 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                     {/* Back Header */}
                     <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3.5">
                       <div className="flex items-center gap-2.5">
-  
+
                         <div>
                           <p className="font-display text-xs font-bold uppercase tracking-wider text-leaf">
                             The Endloops Mission
@@ -319,12 +336,6 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
 
                     {/* Back Footer */}
                     <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3.5">
-                      <div className="flex items-center gap-2">
-                        <span className="size-2 rounded-2xl bg-leaf animate-radar" />
-                        <span className="text-[11px] font-mono text-slate-300">
-                          Dubai, UAE · Alkazim Heritage
-                        </span>
-                      </div>
                       <div className="flex items-center gap-1 text-[11px] font-bold text-leaf">
                         <IconCheckCircle className="size-3.5" />
                         <span>100% Deterministic</span>
@@ -342,7 +353,7 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
       </section>
 
       {/* THE 5-STEP LOOP: HOW ENDLOOPS WORKS */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 !mt-6 sm:!mt-8">
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-2xl bg-leaf/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-dark">
             <span>The Human-in-the-Loop Architecture</span>
@@ -354,8 +365,6 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
             From raw messy invoices to signed audit opinions, Endloops executes the manual grunt work, but leaves the professional judgement, risk evaluation, and final signature where it belongs: with you.
           </p>
         </div>
-
-
 
         {/* Vertical Stepper & Active Detail Layout */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 items-start">
@@ -372,21 +381,23 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                 <button
                   key={step.title}
                   onClick={() => handleSelectStep(idx)}
-                  className={`relative z-10 w-full overflow-hidden flex flex-col rounded-2xl p-4 sm:p-4.5 text-left transition-all duration-300 duration-300 border cursor-pointer ${isActive
+                  className={`relative z-10 w-full overflow-hidden flex flex-col rounded-2xl p-4 sm:p-4.5 text-left transition-all duration-300  border cursor-pointer ${isActive
                     ? 'border-brand bg-white shadow-xl shadow-brand/10 ring-2 ring-brand/25 sm:translate-x-1.5'
                     : 'border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 hover:shadow-xs'
                     }`}
-                  title={`Click to inspect Step ${step.step}: ${step.title} (pauses loop)`}
+                  title={`Click to inspect Step ${step.step}: ${step.title}`}
                 >
                   {/* Vertical Progress Bar for active step while playing */}
                   {isActive && isWorkflowPlaying && !isWorkflowHovered && (
                     <div
-                      className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-emerald-400 via-emerald-500 to-emerald-600 transition-all duration-75"
+                      className="absolute left-0 top-0 w-1.5 bg-gradient-to-b from-emerald-400 via-emerald-500 to-emerald-600 rounded-r-full shadow-[0_0_10px_rgba(16,185,129,0.5)] transition-all duration-75 overflow-hidden"
                       style={{ height: `${Math.min(100, workflowProgress)}%` }}
-                    />
+                    >
+                      <div className="absolute -bottom-1 left-0 size-1.5 rounded-full bg-white shadow-[0_0_6px_#fff]" />
+                    </div>
                   )}
                   {isActive && (!isWorkflowPlaying || isWorkflowHovered) && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500" />
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500 rounded-r-full shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
                   )}
 
                   <div className="flex items-center gap-3.5">
@@ -445,24 +456,21 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
               {/* Tag & Phase badge */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <span className="inline-block rounded-2xl bg-brand/10 border border-brand/20 px-3 py-1 text-xs font-bold text-brand uppercase tracking-wider">
+                  <span className="inline-block rounded-2xl bg-brand/10 border border-brand/20 px-3 py-1 text-xs font-bold  tracking-wider">
                     {workflowSteps[activeWorkflowIndex].tag}
                   </span>
                   <span className="text-xs font-mono font-semibold text-slate-400">
                     Step {activeWorkflowIndex + 1} of {workflowSteps.length}
                   </span>
                 </div>
-                <span className="text-xs text-slate-400 font-mono hidden sm:inline">
-                  Phase {workflowSteps[activeWorkflowIndex].step} of 5
-                </span>
               </div>
 
               {/* Step Title & Action */}
               <div>
-                <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-navy tracking-tight">
+                <h3 className=" text-2xl  font-extrabold text-navy tracking-tight">
                   Step {workflowSteps[activeWorkflowIndex].step}: {workflowSteps[activeWorkflowIndex].title} – {workflowSteps[activeWorkflowIndex].action}
                 </h3>
-                <p className="mt-2 text-base text-slate-600 leading-relaxed font-normal">
+                <p className="mt-2  text-slate-600 ">
                   {workflowSteps[activeWorkflowIndex].description}
                 </p>
               </div>
@@ -520,12 +528,6 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                 </button>
               </div>
 
-              <button
-                onClick={handleTogglePlay}
-                className="font-semibold text-brand hover:underline cursor-pointer"
-              >
-                {isWorkflowPlaying && !isWorkflowHovered ? 'Pause loop' : 'Resume loop'}
-              </button>
             </div>
           </div>
         </div>
@@ -624,13 +626,15 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
                     </div>
                   </div>
 
-                  <div className="mt-6 border-t border-slate-100 pt-4 flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">
-                      {item.timeSaved}
-                    </span>
+                  <div className="mt-6 border-t border-slate-100 pt-4 flex items-center justify-between gap-3">
+                    <div className="min-w-0">
+                      <span className="inline text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-md [box-decoration-break:clone] [-webkit-box-decoration-break:clone] leading-relaxed">
+                        {item.timeSaved}
+                      </span>
+                    </div>
                     <button
                       onClick={() => onNavigate('solutions')}
-                      className="text-xs font-bold text-navy hover:text-brand transition-colors inline-flex items-center gap-1"
+                      className="text-xs font-bold text-navy hover:text-brand transition-colors inline-flex items-center gap-1 shrink-0 cursor-pointer"
                     >
                       <span>Explore</span>
                       <IconArrowRight className="size-3.5" />
@@ -736,10 +740,10 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
             <IconUsers className="size-3.5" />
             <span>Built for Financial Practitioners</span>
           </div>
-          <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+          <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
             Designed for teams where reliability is non-negotiable
           </h2>
-          <p className="mt-3 text-base text-slate-600">
+          <p className="mt-3 text-lg text-slate-600">
             Our users are accountants, auditors, finance teams, and property management companies in the UAE and GCC.
           </p>
         </div>
@@ -804,7 +808,7 @@ export default function HomePage({ onNavigate, onRequestDemo }: HomePageProps) {
             <IconCheckCircle className="size-3.5" />
             <span>Voices From The Field</span>
           </div>
-          <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+         <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
             Trusted by practitioners who stake their reputation on numbers
           </h2>
         </div>
