@@ -142,12 +142,6 @@ export default function Nav({ currentPage, onNavigate, onRequestDemo }: NavProps
                         }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
-                      <span
-                        className={`font-mono text-[10px] tracking-wider transition-colors mr-1.5 ${isActive ? 'text-leaf font-bold' : 'text-slate-400 group-hover:text-brand'
-                          }`}
-                      >
-                        {item.index}
-                      </span>
                       <span className="tracking-tight">{item.label}</span>
                       {item.badge && (
                         <span
